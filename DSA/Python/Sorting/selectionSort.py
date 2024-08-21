@@ -1,12 +1,15 @@
-A = [64,25,12,22,11]
+def selectionSort(list):
+    length = len(list)
+    for i in range(length - 1):
+        min_index = i
+        for j in range(i + 1, length):
+            if list[j] < list[min_index]:
+                min_index = j
+        list[i], list[min_index] = list[min_index], list[i]
+    return list
+size = int(input("Enter the size of the list: "))
 
-for i in range(len(A) - 1):
-    min_idx = 1
-    for j in range(i + 1, len(A)):
-        if A[min_idx] > A[j]:
-            min_idx = j
-    A[i], A[min_idx] = A[min_idx], A[i]
+element = [int(input("Enter the element: ")) for i in range(size)]
 
-print("Sorted Array")
-for i in range(len(A)):
-    print(A[i], end= " ")        
+selSort = selectionSort(element)
+print(selSort)
