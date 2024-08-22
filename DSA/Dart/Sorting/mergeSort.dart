@@ -1,19 +1,18 @@
 List<int> mergeSort(List<int> list) {
-  // Base case
+  // Base case: if the list is empty or have a one element,
   if (list.length <= 1) {
     return list;
   }
-
-  // Split the list in halves
+  // Spilt it into halves
   int middle = list.length ~/ 2;
   List<int> left = list.sublist(0, middle);
   List<int> right = list.sublist(middle);
 
-  // Recursive sort the havles
+  // Recursive sort halves
   left = mergeSort(left);
   right = mergeSort(right);
 
-  // Merge the sorted halves
+  // Merge the sort halves
   return merge(left, right);
 }
 
@@ -31,13 +30,11 @@ List<int> merge(List<int> left, List<int> right) {
       j++;
     }
   }
-
-  // Adding the remaning element in the left if any
+  // Remaning the left element if any
   while (i < left.length) {
     result.add(left[i]);
     i++;
   }
-  // Adding the remaning element in the right if any
   while (j < right.length) {
     result.add(right[j]);
     j++;
@@ -46,7 +43,7 @@ List<int> merge(List<int> left, List<int> right) {
 }
 
 void main() {
-  List<int> unsortedList = [9, 8, 2, 5, 7, 6, 3, 4, 1, 10];
+  List<int> unsortedList = [7, 5, 6, 3, 2, 1, 4, 9, 8, 10];
   List<int> sortedList = mergeSort(unsortedList);
   print(sortedList);
 }
