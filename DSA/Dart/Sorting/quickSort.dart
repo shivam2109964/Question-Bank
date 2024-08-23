@@ -1,4 +1,3 @@
-import 'mergeSort.dart';
 
 List<int> quickSort(List<int> list, int left, int right) {
   if (left < right) {
