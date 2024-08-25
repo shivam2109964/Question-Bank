@@ -4,8 +4,10 @@ List<int> insertionList(List<int> list) {
     int key = list[i];
     int j = i - 1;
     while (j >= 0 && list[j] > key) {
+      print(list);
       list[j + 1] = list[j];
       j = j - 1;
+      print(j);
     }
     list[j + 1] = key;
   }
