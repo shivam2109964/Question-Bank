@@ -7,7 +7,6 @@ List<int> mergeSort(List<int> list) {
   int middle = list.length ~/ 2;
   List<int> left = list.sublist(0, middle);
   List<int> right = list.sublist(middle);
-
   // Recursive sort halves
   left = mergeSort(left);
   right = mergeSort(right);
@@ -43,7 +42,7 @@ List<int> merge(List<int> left, List<int> right) {
 }
 
 void main() {
-  List<int> unsortedList = [7, 5, 6, 3, 2, 1, 4, 9, 8, 10];
+  List<int> unsortedList = [6, 4, 2, 1, 9, 8, 3, 5];
   List<int> sortedList = mergeSort(unsortedList);
   print(sortedList);
 }
