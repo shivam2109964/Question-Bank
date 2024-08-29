@@ -1,6 +1,6 @@
-List<int> insertionList(List<int> list) {
-  int size = list.length;
-  for (int i = 1; i <= size - 1; i++) {
+List<int> insertionSort(List<int> list) {
+  int n = list.length;
+  for (int i = 1; i < n; i++) {
     int key = list[i];
     int j = i - 1;
     while (j >= 0 && list[j] > key) {
@@ -13,7 +13,7 @@ List<int> insertionList(List<int> list) {
 }
 
 void main() {
-  List<int> list = [85, 14, 64, 59, 02, 34, 75];
-  List<int> sortedList = insertionList(list);
+  List<int> list = [41, 45, 58, 96, 36, 52, 47];
+  List<int> sortedList = insertionSort(list);
   print(sortedList);
 }
