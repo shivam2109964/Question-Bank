@@ -18,6 +18,7 @@ void bucketSort(List<int> list) {
     buckets[i].sort();
   }
   // 5. Concatenate all sorted buckets
+  print(buckets);
   int index = 0;
   for (int i = 0; i < n; i++) {
     for (int j = 0; j < buckets[i].length; j++) {
